@@ -12,9 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'precio'    => $_POST['precio'] ?? '',
         'venta'     => $_POST['venta'] ?? ''
     ];
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
+
 
     // Cargar XML existente
     $xml = simplexml_load_file($xmlPath);
@@ -22,6 +20,17 @@ echo '</pre>';
         die("❌ Error al cargar el XML original.");
     }
 
+        foreach ($xml->coche as $cocheExistente) {
+    if ((string)$cocheExistente['matricula'] === $nuevoCoche['matricula']) {
+        echo "❌ Ya existe un coche con la matrícula <strong>{$nuevoCoche['matricula']}</strong>.
+        <div style='margin-left: 2rem;'>
+        <a href='index.php' class='btn btn-primary'>Volver al inicio</a>
+        </div>";
+exit;
+;
+        
+    }
+}
     // Insertar nuevo coche
     $coche = $xml->addChild('coche');
     $coche->addAttribute('matricula', $nuevoCoche['matricula']);

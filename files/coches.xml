@@ -44,4 +44,4 @@
         <precio venta="ocasión">3000</precio>
     </coche>
 
-<coche matricula="0011FFF"><marca>ford</marca><modelo>Granada</modelo><puertas>3</puertas><color>Blanco</color><precio venta="nuevo">1232</precio></coche><coche matricula="5578DDD"><marca>Seat</marca><modelo>Marbella</modelo><puertas>4</puertas><color>Azul</color><precio venta="ocasión">200</precio></coche><coche matricula="2354DDD"><marca>Ford</marca><modelo>Focus</modelo><puertas>2</puertas><color>Negro</color><precio venta="nuevo">12</precio></coche></coches>
+<coche matricula="0011FFF"><marca>ford</marca><modelo>Granada</modelo><puertas>3</puertas><color>Blanco</color><precio venta="nuevo">1232</precio></coche><coche matricula="2354DDD"><marca>Ford</marca><modelo>Focus</modelo><puertas>2</puertas><color>Negro</color><precio venta="nuevo">12</precio></coche></coches>
