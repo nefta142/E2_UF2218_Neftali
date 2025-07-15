@@ -1,4 +1,5 @@
 # Explicacion sencilla
+Esta es una Web donde podremos:
 - **Dar de alta** nuevos coches.
 - **Modificar** los datos de un coche si hubo un error o si ha cambiado alguna información.
 - **Eliminar** coches del registro.
