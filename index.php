@@ -95,10 +95,16 @@ $cars = simplexml_load_file($xmlPath);
                 <td><?= $coche->color ?></td>
                 <td><?= $coche->precio ?></td>
                 <td><?= $coche->precio['venta'] ?></td>
-                <td>
+                <td class="d-flex gap-2">
+                    <!-- Eliminar-->
                     <form action="eliminar_coche.php" method="post" onsubmit="return confirm('¿Estás seguro de eliminar este coche?');">
                         <input type="hidden" name="matricula" value="<?= $coche['matricula'] ?>">
                         <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </form>
+                     <!-- Botón Modificar -->
+                    <form action="modificar_coche.php" method="get">
+                        <input type="hidden" name="matricula" value="<?= $coche['matricula'] ?>">
+                        <button type="submit" class="btn btn-warning btn-sm">Modificar</button>
                     </form>
                 </td>
             </tr>
