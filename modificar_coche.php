@@ -51,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <body class="bg-light">
     <div class="container py-5">
         <h2>Modificar Coche <?= htmlspecialchars($matricula) ?></h2>
+<!--Formulario de modificacion-->
         <form action="modificar_coche.php" method="post" class="bg-white p-4 shadow rounded">
             <input type="hidden" name="matricula" value="<?= htmlspecialchars($matricula) ?>">
 
@@ -88,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     <option value="segunda mano" <?= $cocheEncontrado->precio['venta'] == 'segunda mano' ? 'selected' : '' ?>>Segunda Mano</option>
                 </select>
             </div>
-
+<!--Boton de guardar-->
             <button type="submit" class="btn btn-primary">Guardar Cambios</button>
             <a href="index.php" class="btn btn-secondary">Cancelar</a>
         </form>

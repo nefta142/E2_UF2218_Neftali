@@ -20,8 +20,7 @@ $cars = simplexml_load_file($xmlPath);
         switch ($msg) {
             case 'eliminado':
                 $alert = '✅ Coche eliminado correctamente.';
-                break;
-        }
+                break; }
         ?>
         <?php if ($alert): ?>
             <div class="alert alert-info alert-dismissible fade show" role="alert">
@@ -30,7 +29,7 @@ $cars = simplexml_load_file($xmlPath);
             </div>
         <?php endif; ?>
     <?php endif; ?>
-
+        <!--Formulario de inserción de nuevos coches-->
     <h2 class="mb-4">Insertar Nuevo Coche</h2>
     <form action="insertar_coche.php" method="post" class="bg-white p-4 shadow rounded mb-5">
         <div class="row g-3">
@@ -72,6 +71,7 @@ $cars = simplexml_load_file($xmlPath);
     </form>
 
     <h2 class="mb-3">Listado de Coches</h2>
+        <!-- Creación de la tabla-->
     <table id="tabla-coches" class="table table-striped table-bordered">
         <thead>
             <tr>
@@ -88,6 +88,7 @@ $cars = simplexml_load_file($xmlPath);
         <tbody>
             <?php foreach ($cars->coche as $coche): ?>
             <tr>
+            <!--Mostrar los datos de xml-->
                 <td><?= $coche['matricula'] ?></td>
                 <td><?= $coche->marca ?></td>
                 <td><?= $coche->modelo ?></td>
