@@ -54,6 +54,7 @@ echo '</pre>';
         unlink($tempPath);
 
         echo "✅ Insertado y validado.";
+        echo "</ul><a href='index.php'>Volver</a>";
 
       //  header("Location: index.php?msg=insertado");
       //  exit;
