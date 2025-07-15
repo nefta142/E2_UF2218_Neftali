@@ -12,23 +12,14 @@ $cars = simplexml_load_file($xmlPath);
 </head>
 <body class="bg-light">
 <div class="container py-5">
-
+<!--Mostramos Mensaje de eliminar coche -->
     <?php if (isset($_GET['msg'])): ?>
         <?php
         $msg = htmlspecialchars($_GET['msg']);
         $alert = '';
         switch ($msg) {
-            case 'insertado':
-                $alert = '✅ Coche insertado correctamente.';
-                break;
             case 'eliminado':
                 $alert = '✅ Coche eliminado correctamente.';
-                break;
-            case 'error':
-                $alert = '❌ Ocurrió un error en la operación.';
-                break;
-            case 'duplicado':
-                $alert = '⚠️ Ya existe un coche con esa matrícula.';
                 break;
         }
         ?>
@@ -116,7 +107,7 @@ $cars = simplexml_load_file($xmlPath);
     </table>
 </div>
 
-<!-- JS de Bootstrap y DataTables -->
+<!-- Añadimos Bootstrap y DataTables -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
