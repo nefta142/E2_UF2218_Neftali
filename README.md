@@ -18,3 +18,35 @@ La carpeta `files` contiene:
 
 Fuera de la subcarpeta `files`, se encuentran los archivos `.php`, que manejan la lógica de inserción, modificación, eliminación y visualización de los datos. Cada archivo está comentado para facilitar su comprensión.
 
+---
+
+# Método de utilización 
+
+### Requisitos:
+
+- Tener instalado:
+  - **XAMPP** (Windows)
+  - **LAMP** (Linux)
+- Asegúrate de que la carpeta `files/` tenga permisos de escritura.
+
+---
+
+### 🧰 Configuración paso a paso
+
+#### 1. Copiar el proyecto
+
+- En **XAMPP** (Windows):
+  Copia la carpeta del proyecto a:  
+  `C:\xampp\htdocs\gestion_coches`
+
+- En **LAMP** (Linux):
+  Copia la carpeta a:  
+  `/var/www/html/gestion_coches`
+
+#### 2. Dar permisos a la carpeta `files/` (Linux)
+
+Abre terminal en la carpeta del proyecto y ejecuta:
+
+```bash
+sudo chmod -R 755 files/
+sudo chown -R www-data:www-data files/
