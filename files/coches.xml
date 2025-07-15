@@ -10,13 +10,7 @@
         <precio venta="nuevo">22000</precio>
     </coche>
 
-    <coche matricula="5678XYZ">
-        <marca>Ford</marca>
-        <modelo>Focus</modelo>
-        <puertas>5</puertas>
-        <color>Azul</color>
-        <precio venta="ocasión">14500</precio>
-    </coche>
+    
 
     <coche matricula="0001DEF">
         <marca>Volkswagen</marca>

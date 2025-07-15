@@ -12,6 +12,34 @@ $cars = simplexml_load_file($xmlPath);
 </head>
 <body class="bg-light">
 <div class="container py-5">
+
+    <?php if (isset($_GET['msg'])): ?>
+        <?php
+        $msg = htmlspecialchars($_GET['msg']);
+        $alert = '';
+        switch ($msg) {
+            case 'insertado':
+                $alert = '✅ Coche insertado correctamente.';
+                break;
+            case 'eliminado':
+                $alert = '✅ Coche eliminado correctamente.';
+                break;
+            case 'error':
+                $alert = '❌ Ocurrió un error en la operación.';
+                break;
+            case 'duplicado':
+                $alert = '⚠️ Ya existe un coche con esa matrícula.';
+                break;
+        }
+        ?>
+        <?php if ($alert): ?>
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <?= $alert ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
+
     <h2 class="mb-4">Insertar Nuevo Coche</h2>
     <form action="insertar_coche.php" method="post" class="bg-white p-4 shadow rounded mb-5">
         <div class="row g-3">
@@ -76,14 +104,12 @@ $cars = simplexml_load_file($xmlPath);
                 <td><?= $coche->color ?></td>
                 <td><?= $coche->precio ?></td>
                 <td><?= $coche->precio['venta'] ?></td>
-                <td class="d-flex gap-2">
-        <form action="eliminar_coche.php" method="post" onsubmit="return confirm('¿Estás seguro de eliminar este coche?');">
-            <input type="hidden" name="matricula" value="<?= $coche['matricula'] ?>">
-            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-        </form>
-        <a href="modificar_coche.php?matricula=<?= $coche['matricula'] ?>" class="btn btn-warning btn-sm">Modificar</a>
-        
-    </td>
+                <td>
+                    <form action="eliminar_coche.php" method="post" onsubmit="return confirm('¿Estás seguro de eliminar este coche?');">
+                        <input type="hidden" name="matricula" value="<?= $coche['matricula'] ?>">
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </form>
+                </td>
             </tr>
             <?php endforeach; ?>
         </tbody>
